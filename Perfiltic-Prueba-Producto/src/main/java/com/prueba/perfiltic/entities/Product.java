@@ -16,7 +16,6 @@ public class Product {
 	private String description;
 	private String weight;
 	private double price_cop;
-	
 	private String photo;
 	
 	public int getId() {
