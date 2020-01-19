@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Category {
@@ -13,6 +14,8 @@ public class Category {
 	private int id;
 	private String name;
 	private String photo;
+	@OneToOne
+	private Category category_father;
 	
 	public int getId() {
 		return id;
@@ -31,6 +34,12 @@ public class Category {
 	}
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	public Category getCategory_father() {
+		return category_father;
+	}
+	public void setCategory_father(Category category_father) {
+		this.category_father = category_father;
 	}
 	
 }

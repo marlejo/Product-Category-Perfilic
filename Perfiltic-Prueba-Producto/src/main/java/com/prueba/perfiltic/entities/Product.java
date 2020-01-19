@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+import com.prueba.perfiltic.entities.Category;;
 
 @Entity
 public class Product {
@@ -17,6 +19,8 @@ public class Product {
 	private String weight;
 	private double price_cop;
 	private String photo;
+	@OneToOne
+	private Category category;
 	
 	public int getId() {
 		return id;
@@ -54,6 +58,12 @@ public class Product {
 	}
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 	
