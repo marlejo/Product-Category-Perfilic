@@ -18,6 +18,7 @@
 <th>Description</th>
 <th>Weight</th>
 <th>Price Cop</th>
+<th>Price USD</th>
 <th>Photo</th>
 </tr>
 
@@ -27,12 +28,14 @@
 <td>${product.description}</td>
 <td>${product.weight}</td>
 <td>${product.price_cop}</td>
+<td></td>
 <td>${product.photo}</td>
 <td><a href="getProduct?id=${product.id}">Select</a></td>
 
 </tr>
 </c:forEach>
 </table>
+<td><a href="productReg">Add Product</a></td>
 
 </body>
 </html>

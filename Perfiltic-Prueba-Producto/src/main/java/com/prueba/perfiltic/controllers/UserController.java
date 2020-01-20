@@ -46,7 +46,7 @@ public class UserController {
 		if (user.getPassword().equals(password)) {
 			List <Product> products =  productRepository.findAll();
 			modelMap.addAttribute("products", products);
-			return "showAllProducts";
+			return "allProducts";
 		}else {
 			modelMap.addAttribute("msg", "Invalid Password");
 		}

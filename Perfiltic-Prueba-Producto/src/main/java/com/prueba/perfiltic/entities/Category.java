@@ -1,9 +1,11 @@
 package com.prueba.perfiltic.entities;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,7 +16,9 @@ public class Category {
 	private int id;
 	private String name;
 	private String photo;
+	
 	@OneToOne
+	@JoinColumn(name="CATEGORY_FATHER", referencedColumnName = "ID")
 	private Category category_father;
 	
 	public int getId() {
