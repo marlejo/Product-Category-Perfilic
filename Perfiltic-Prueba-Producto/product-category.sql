@@ -1,0 +1,43 @@
+create database projecto_perfiltic
+
+use projecto_perfiltic;
+
+
+CREATE TABLE CATEGORY (
+    ID int NOT NULL AUTO_INCREMENT,
+    NAME varchar(255) NOT NULL,
+    PHOTO varchar(255),
+    CATEGORY_FATHER int,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (CATEGORY_FATHER) REFERENCES CATEGORY(ID)
+);
+
+CREATE TABLE product (
+    ID int NOT NULL AUTO_INCREMENT,
+    NAME varchar(255) NOT NULL,
+    DESCRIPTION varchar(255) NOT NULL,
+	WEIGHT int,
+	PRICE_COP double,
+    PHOTO varchar(255),
+    CATEGORY_ID int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (CATEGORY_ID) REFERENCES CATEGORY(ID)
+);
+
+CREATE TABLE USER (
+ID INT NOT NULL AUTO_INCREMENT,
+FIRST_NAME VARCHAR(20),
+LAST_NAME VARCHAR(20),
+EMAIL VARCHAR(20),
+PASSWORD VARCHAR(256), 
+PRIMARY KEY (ID),
+UNIQUE KEY (EMAIL)
+);
+
+select * from product
+select * from user
+select * from category
+
+
+DROP TABLE PRODUCT
+DROP TABLE CATEGORY
